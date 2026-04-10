@@ -1,1 +1,24 @@
+body{
+    background: #1a1a2e;
+}
 
+h1{
+    text-align: center;
+    color: red;
+}
+
+.GameBoard {
+    width: 430px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(6, 50px);
+    gap: 5px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.cell{
+    border: 1px solid gray;
+    border-radius: 5px;
+}
