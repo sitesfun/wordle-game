@@ -40,8 +40,10 @@ h1{
     box-sizing: border-box;
 }
 
-.cell:focus {
-    border-color: #0606ff;
+.cell:disabled {
+    color: white;
+    opacity: 1;
+    -webkit-text-fill-color: white;
 }
 
 .active-row {
