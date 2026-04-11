@@ -12,3 +12,7 @@ const word = getRandomWordWithLetters(WORDS);
 console.log("Слово: " + word[0]);
 
 
+let cells = document.querySelectorAll('.cell');
+for (let cell of cells) {
+    
+}
