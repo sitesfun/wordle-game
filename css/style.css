@@ -30,6 +30,18 @@ h1{
     height: 50px;
     border: 1px solid gray;
     border-radius: 5px;
+    background: transparent;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.cell:focus {
+    border-color: #0606ff;
 }
 
 .active-row {
