@@ -1,1 +1,2 @@
+let currentRow = 1;
 
