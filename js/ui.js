@@ -1,21 +1,42 @@
-cells.forEach((cell, index) => {
-    cell.addEventListener('input', (e) => {
-        const value = e.target.value;
-        if (value.length === 1) {
-            const nextCell = cells[index + 1];
-            if (nextCell && !nextCell.disabled) {
-                nextCell.focus();
-            }
-        }
-    });
+let state = {
+    board: [
+        ['', '', '', '', ''],
+        ['', '', '', '', ''],
+        ['', '', '', '', '']
+    ],
+    currentRow: 0,
+    currentCol: 0,
+    error: null
+};
 
-    cell.addEventListener('keydown', (e) => {
-        if (e.key === 'Backspace' && e.target.value === '') {
-            const prevCell = cells[index - 1];
-            if (prevCell && !prevCell.disabled) {
-                prevCell.focus();
+function getGameState() {
+    return state;
+}
+
+function renderBoard() {
+    const state = getGameState();
+    const container = document.querySelector('#board');
+
+    container.innerHTML = '';
+
+    state.board.forEach((row, rowIndex) => {
+        const rowDiv = document.createElement('div');
+        rowDiv.classList.add('row');
+
+        row.forEach((cell, colIndex) => {
+            const input = document.createElement('input');
+            input.classList.add('cell');
+            input.value = cell;
+            input.readOnly = true;
+
+            // підсвітка активної клітинки
+            if (rowIndex === state.currentRow && colIndex === state.currentCol) {
+                input.classList.add('active');
             }
-        }
+
+            rowDiv.appendChild(input);
+        });
+
+        container.appendChild(rowDiv);
     });
-});
->>>>>>> 8f45064d433414c7b6e23df1afe3c27e79f68a51
+};
