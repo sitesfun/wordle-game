@@ -87,8 +87,10 @@ function checkWord() {
 
     if (results.every(r => r === 'correct')) {
         alert("Вітаємо! Ви вгадали слово!");
+        window.location.reload();
     } else if (currentRow >= 6) {
         alert("Гра закінчена! Слово було: " + word[0]);
+        window.location.reload();
     }
 
     currentWord = [];
