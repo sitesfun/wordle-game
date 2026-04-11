@@ -70,3 +70,43 @@ h1{
 .old-row {
     filter: none;
 }
+
+.keyboard {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: fit-content;
+    user-select: none;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.key {
+    background: #818384;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    min-width: 40px;
+}
+
+.key:active {
+    background: #565758;
+}
+
+.key.wide {
+    min-width: 65px;
+}
+
+.key.active {
+    background: #565758;
+    transform: scale(0.95);
+}
