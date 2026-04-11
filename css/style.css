@@ -1,5 +1,6 @@
 body{
     background: #1a1a2e;
+    font-family: 'Unbounded', sans-serif;
 }
 
 h1{
@@ -38,6 +39,7 @@ h1{
     text-transform: uppercase;
     outline: none;
     box-sizing: border-box;
+    font-family: 'Unbounded', sans-serif;
 }
 
 .cell:disabled {
@@ -96,6 +98,7 @@ h1{
     cursor: pointer;
     text-transform: uppercase;
     min-width: 40px;
+    font-family: 'Unbounded', sans-serif;
 }
 
 .key:active {
