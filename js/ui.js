@@ -1,5 +1,3 @@
-let cells = document.querySelectorAll('.cell');
-
 cells.forEach((cell, index) => {
     cell.addEventListener('input', (e) => {
         const value = e.target.value;
