@@ -15,7 +15,7 @@ function getGameState() {
 
 function renderBoard() {
     const state = getGameState();
-    const container = document.querySelector('#board');
+    const container = document.querySelector('.GameBoard');
 
     container.innerHTML = '';
 
@@ -40,3 +40,47 @@ function renderBoard() {
         container.appendChild(rowDiv);
     });
 };
+
+document.addEventListener('keydown', (e) => {
+    const state = getGameState();
+
+    // букви
+    if (/^[a-zA-Zа-яА-Я]$/.test(e.key)) {
+        if (state.currentCol < 5) {
+            state.board[state.currentRow][state.currentCol] = e.key.toUpperCase();
+            state.currentCol++;
+        }
+    }
+
+    // backspace
+    if (e.key === 'Backspace') {
+        if (state.currentCol > 0) {
+            state.currentCol--;
+            state.board[state.currentRow][state.currentCol] = '';
+        }
+    }
+
+    // enter
+    if (e.key === 'Enter') {
+        if (state.currentCol === 5) {
+            state.currentRow++;
+            state.currentCol = 0;
+        } else {
+            state.error = 'Введи 5 букв!';
+        }
+    }
+
+    renderBoard();
+    showError();
+});
+
+function showError() {
+    const state = getGameState();
+    const errorDiv = document.querySelector('#error');
+
+    if (state.error) {
+        errorDiv.textContent = state.error;
+    } else {
+        errorDiv.textContent = '';
+    }
+}
